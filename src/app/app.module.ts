@@ -6,6 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { JoblistComponent } from './joblist/joblist.component';
 import { MenuComponent } from './menu/menu.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { ProfilComponent } from './profil/profil.component';
+import { EditprofilComponent } from './editprofil/editprofil.component';
+import { PostjobComponent } from './postjob/postjob.component';
+import { AddprofilComponent } from './addprofil/addprofil.component';
+import { DetaisjobComponent } from './detaisjob/detaisjob.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +20,13 @@ import { MenuComponent } from './menu/menu.component';
     HomeComponent,
     JoblistComponent,
     MenuComponent,
+    SigninComponent,
+    SignupComponent,
+    ProfilComponent,
+    EditprofilComponent,
+    PostjobComponent,
+    AddprofilComponent,
+    DetaisjobComponent,
   ],
   imports: [
     BrowserModule,
