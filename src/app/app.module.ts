@@ -13,6 +13,10 @@ import { EditprofilComponent } from './editprofil/editprofil.component';
 import { PostjobComponent } from './postjob/postjob.component';
 import { AddprofilComponent } from './addprofil/addprofil.component';
 import { DetaisjobComponent } from './detaisjob/detaisjob.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,9 @@ import { DetaisjobComponent } from './detaisjob/detaisjob.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

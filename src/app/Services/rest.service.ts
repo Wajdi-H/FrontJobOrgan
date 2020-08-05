@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError, from } from 'rxjs';
-import { Chercheurj } from './../Composant/chercheur/chercheurj';
+/* import { Chercheurj } from './../Composant/chercheur/chercheurj';
 import { Entreprise } from './../Composant/entreprise/entreprise';
 import { Disponibilte } from './../Composant/Dispo/disponibilte';
 import { Candidature } from './../Composant/candidature/candidature';
@@ -10,10 +10,11 @@ import { Categorie } from './../Composant/categorie/categorie';
 import { Crenaux } from './../Composant/crenaux/crenaux';
 import { Employe } from './../Composant/employe/employe';
 import { Experiance } from './../Composant/experiance/experiance';
-import { Mission } from './../Composant/mission/mission';
+
 import { Preferance } from './../Composant/preferance/preferance';
 import { Reseauxsoci } from './../Composant/reseauxsoci/reseauxsoci';
-import { Typetravail } from './../Composant/typetravail/typetravail';
+import { Typetravail } from './../Composant/typetravail/typetravail'; */
+import { Mission } from './../Composant/mission/mission';
 
 @Injectable({
   providedIn: 'root'
