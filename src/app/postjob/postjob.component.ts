@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { Mission } from './../Composant/mission/mission';
 import{RestService}from'src/app/Services/rest.service';
+
 import { from } from 'rxjs';
 @Component({
   selector: 'app-postjob',
@@ -10,17 +11,25 @@ import { from } from 'rxjs';
 })
 export class PostjobComponent implements OnInit {
   missions: any;
-  unemission: Mission;
+  //unemission:Mission;
+  @Input() unemission ={ 
+    idMission: null,
+    titreMission: null,
+    competances: null,
+    description: null,
+    vehicule: null,
+    accessoires: null,
+    categorie: null,
+    entreprise: null}
+
   constructor( private Rest: RestService, private router: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-  
   }
-
-  saveClass() {
+  SaveMission() {
     this.Rest.AddMission(this.unemission).subscribe(
       response => {
-        this.route.navigate(['/classe']);
+        this.route.navigate(['/Home']);
       }
     );
     }
