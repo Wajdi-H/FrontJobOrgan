@@ -10,6 +10,7 @@ import { EditprofilComponent } from './editprofil/editprofil.component';
 import { PostjobComponent } from './postjob/postjob.component';
 import { AddprofilComponent } from './addprofil/addprofil.component';
 import { DetaisjobComponent } from './detaisjob/detaisjob.component';
+import { CandidatureComponent } from './candidature/candidature.component';
 const routes: Routes = [
  
   { path: 'Home', component: HomeComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'post-job', component: PostjobComponent },
   { path: 'add-profil', component: AddprofilComponent },
   { path: 'job-detais', component: DetaisjobComponent },
+  { path: 'Candidature/:id', component: CandidatureComponent },
+
   {path: '', redirectTo: 'Home', pathMatch: 'full'},
 ];
 

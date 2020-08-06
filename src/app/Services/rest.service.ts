@@ -15,6 +15,7 @@ import { Preferance } from './../Composant/preferance/preferance';
 import { Reseauxsoci } from './../Composant/reseauxsoci/reseauxsoci';
 import { Typetravail } from './../Composant/typetravail/typetravail'; */
 import { Mission } from './../Composant/mission/mission';
+import { Candidature } from '../Composant/candidature/candidature';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,52 @@ export class RestService {
       'Content-Type': 'application/json'
     })
   }
+
+  getallcandidature(): Observable<Candidature> {
+    return this.http.get<Candidature>(this.apiURL + '/Candidature/get')
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+
+
+  }
+
+  Getcandidature(id: number): Observable<Candidature> {
+    return this.http.get<Candidature>(this.apiURL + '/Candidature/get/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  // HttpClient API post() method => Create employee
+  Addcandidature(universite,id:number): Observable<Candidature> {
+    return this.http.post<Candidature>(this.apiURL + '/Candidature/add/'+ id, JSON.stringify(universite), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  // HttpClient API put() method => Update employee
+  updateCandaiture(id, Candidature): Observable<Candidature> {
+    return this.http.put<Candidature>(this.apiURL + '/Candidature/edit/' + id, JSON.stringify(Candidature), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  // HttpClient API delete() method => Delete employee
+  DeteteMission(id) {
+    return this.http.delete<Candidature>(this.apiURL + '/Candidature/supprimer/' + id, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+
 
   GetallMsiion(): Observable<Mission> {
     return this.http.get<Mission>(this.apiURL + '/mission/get')
@@ -77,7 +124,6 @@ export class RestService {
         catchError(this.handleError)
       )
   }
-
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
