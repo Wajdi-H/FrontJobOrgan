@@ -1,0 +1,49 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Candidature </h5>
+                <button type="button"  routerLink="/ListJobs" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="SaveCandiature()">
+
+                    <div class="image">
+                        <img src="assets/images/calendar.png" alt="Image" class="img-fluid">
+
+                    </div>
+                    <p class="msg">Attention à rester compétitif pour être sélectionné(e) sans pour autant sous estimer
+                        la valeur de ton travail au risque de ne pas être crédible.*
+                    </p>
+
+                    <div class="form-group">
+                        <label class="bud" for="exampleInputEmail1"><B>Buget:</B></label>
+                        <input type="text" class="form-control" placeholder="12$" name="budgetDemande"
+                            [(ngModel)]="Candidat.budgetDemande">
+                    </div>
+                    <div class="form-group">
+                        <label class="why" for="exampleInputPassword1"><B>Pourquoi es-tu le parfait Candidat pour remplir
+                            cette mission ?</B></label>
+                        <textarea class="form-control" id="textarea"
+                            placeholder="Écrivez quelques lignes sur vos travaux" rows="8" name="descCompetances"
+                            [(ngModel)]="Candidat.descCompetances">
+                         </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (onclick)="SaveCandiature()">Postuler</button>
+                </form>
+
+            </div>
+
+            
+            <div class="modal-footer">
+                <button type="button" routerLink="/ListJobs" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>

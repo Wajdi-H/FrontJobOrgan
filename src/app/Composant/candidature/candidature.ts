@@ -15,4 +15,5 @@ export class Candidature {
         this.chercheur = chercheur;
         this.mission = mission;
     }
+    
 }
