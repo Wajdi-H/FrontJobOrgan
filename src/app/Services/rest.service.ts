@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError, from } from 'rxjs';
-/* import { Chercheurj } from './../Composant/chercheur/chercheurj';
+ import { Chercheurj } from './../Composant/chercheur/chercheurj';
 import { Entreprise } from './../Composant/entreprise/entreprise';
 import { Disponibilte } from './../Composant/Dispo/disponibilte';
-import { Candidature } from './../Composant/candidature/candidature';
 import { Categorie } from './../Composant/categorie/categorie';
 import { Crenaux } from './../Composant/crenaux/crenaux';
 import { Employe } from './../Composant/employe/employe';
@@ -13,7 +12,7 @@ import { Experiance } from './../Composant/experiance/experiance';
 
 import { Preferance } from './../Composant/preferance/preferance';
 import { Reseauxsoci } from './../Composant/reseauxsoci/reseauxsoci';
-import { Typetravail } from './../Composant/typetravail/typetravail'; */
+import { Typetravail } from './../Composant/typetravail/typetravail'; 
 import { Mission } from './../Composant/mission/mission';
 import { Candidature } from '../Composant/candidature/candidature';
 
@@ -71,7 +70,7 @@ export class RestService {
   }
 
   // HttpClient API delete() method => Delete employee
-  DeteteMission(id) {
+  Detetecandidature(id) {
     return this.http.delete<Candidature>(this.apiURL + '/Candidature/supprimer/' + id, this.httpOptions)
       .pipe(
         retry(1),
@@ -119,6 +118,61 @@ export class RestService {
   // HttpClient API delete() method => Delete employee
   DeleteMission(id) {
     return this.http.delete<Mission>(this.apiURL + '/mission/supprimer/' + id, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+
+  ///////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+  Getallcategorie(): Observable<Categorie> {
+    return this.http.get<Categorie>(this.apiURL + '/categorie/get')
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+
+
+  }
+
+  Getcatgorie(id: number): Observable<Categorie> {
+    return this.http.get<Categorie>(this.apiURL + '/categorie/get/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  // HttpClient API post() method => Create employee
+  Addcategorie(universite): Observable<Categorie> {
+    return this.http.post<Categorie>(this.apiURL + '/categorie/add', JSON.stringify(universite), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  // HttpClient API put() method => Update employee
+  updatecategorie(id, universite): Observable<Categorie> {
+    return this.http.put<Categorie>(this.apiURL + '/categorie/edit/' + id, JSON.stringify(universite), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  // HttpClient API delete() method => Delete employee
+  Deletecategorie(id) {
+    return this.http.delete<Categorie>(this.apiURL + '/categorie/supprimer/' + id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

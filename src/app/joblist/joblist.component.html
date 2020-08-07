@@ -85,30 +85,24 @@
 					<div class="col-lg-3 col-md-4">
 						<div class="accordion">
 							<div class="panel-group" id="tr-accordion">
-								<div class="card panel-faq">
+								 <!-- <app-listcategorie></app-listcategorie>  -->
+								 <div class="card panel-faq">
 									<div class="card-header">
 										<button data-toggle="collapse" data-target="#accordion-one" aria-expanded="true"
 											aria-controls="accordion-one">Categories</button>
 									</div>
 									<div id="accordion-one" class="collapse show" data-parent="#tr-accordion">
-
+								
 										<div class="panel-body">
-											<h5><a href="categories-main.html"><i class="fa fa-caret-down"></i> All
-													Categories</a></h5>
-											<a href="#"><i
-													class="icofont icofont-man-in-glasses"></i>Engineer/Architects</a>
-											<ul>
-												<li><a href="#">Software <span>(129)</span></a></li>
-												<li><a href="#">Architecture <span>(8342)</span></a></li>
-												<li><a href="#">UI & UX Designer <span>(782)</span></a></li>
-												<li><a href="#">Telecommunication <span>(5247)</span></a></li>
-												<li><a href="#">Civil Engineer <span>(634)</span></a></li>
-												<li><a href="#">Chemical Engineer <span>(453)</span></a></li>
-												<li><a href="#">Program Development <span>(7986)</span></a></li>
-												<li><a href="#">Mechanical Engineer <span>(742)</span></a></li>
-												<li><a href="#">Industrial Engineer <span>(149)</span></a></li>
+											<h5><i class="fa fa-caret-down"></i> Tous Les 
+												Catégories</h5>
+											<i class="icofont icofont-man-in-glasses"></i>Choisir la Catégorie
+											<ul class="cat" *ngFor="let suit of categ"><!-- suit.idCateg -->
+												<!--<li  class="cat" *ngFor="let suit of categ" ><button type="submit" (onclick)="filtrerwithcategorie()">{{suit.nomCateg}}</button></li>-->
+												<li (click)="filtrerwithcategorie(suit.idCateg)">{{suit.nomCateg}}</li>
+												
 											</ul>
-											<div class="see-more">
+											<!-- <div class="see-more">
 												<button type="button" class="show-more one"><i
 														class="fa fa-plus-square-o" aria-hidden="true"></i>See
 													More</button>
@@ -118,7 +112,7 @@
 													<li><a href="#">IT Department Manager<span>(3829)</span></a></li>
 													<li><a href="#">QA Department Manager<span>(352)</span></a></li>
 												</ul>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>
@@ -294,15 +288,16 @@
 					<div class="col-md-8 col-lg-7">
 						<div class="section job-list-item">
 							<div class="featured-top clearfix">
-								<h4>Showing 1-25 of 65,712 ads</h4>
+								<h4>les Missions </h4>
 								<div class="dropdown pull-right">
 									<div class="dropdown category-dropdown">
-										<h5>Sort by:</h5>
-										<a data-toggle="dropdown" href="#"><span class="change-text">Most
-												Relevant</span><i class="fa fa-caret-square-o-down"></i></a>
+										<h5>Trier par:
+										</h5>
+										<a data-toggle="dropdown" href="#"><span class="change-text">Le plus pertinent
+											</span><i class="fa fa-caret-square-o-down"></i></a>
 										<ul class="dropdown-menu category-change">
-											<li><a href="#">Most Relevant</a></li>
-											<li><a href="#">Most Popular</a></li>
+											<li><a href="#">Le plus pertinent</a></li>
+											<li><a href="#">Le plus populaire</a></li>
 										</ul>
 									</div>
 								</div>
@@ -310,11 +305,11 @@
 							<table class="table table-sm">
 								<thead>
 									<tr>
-										<th scope="col">Mission</th>
+										<th scope="col"></th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr *ngFor="let c of mission">
+									<tr *ngFor="let c of flitredmission">
 <th>
 
 										<div class="job-ad-item">

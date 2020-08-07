@@ -12,7 +12,7 @@ import { from } from 'rxjs';
 export class PostjobComponent implements OnInit {
   missions: any;
   //unemission:Mission;
-  @Input() unemission ={ 
+ @Input() unemission ={ 
     idMission: null,
     titreMission: null,
     competances: null,
@@ -20,13 +20,16 @@ export class PostjobComponent implements OnInit {
     vehicule: null,
     accessoires: null,
     categorie: null,
-    entreprise: null}
+    budget:null,
+    localisation:null,
+    entreprise: null} 
 
   constructor( private Rest: RestService, private router: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
   }
   SaveMission() {
+    
     this.Rest.AddMission(this.unemission).subscribe(
       response => {
         this.route.navigate(['/Home']);
