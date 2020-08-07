@@ -1,0 +1,44 @@
+<!-- <div class="dropdown category-dropdown">
+    <a data-toggle="dropdown" href="#"><span class="change-text">Catégorie des Mission</span> <i
+            class="fa fa-angle-down"></i></a>
+    <ul class="dropdown-menu category-change">
+        <li *ngFor="let suit of categ"><a href="#">>{{suit.nomCateg}}</a></li>
+
+    </ul>
+</div> 
+
+ <select id="TPV" class="form-control" name="nomCateg"  >
+    <option disabled>Categorie
+    </option>
+    <option  *ngFor="let suit of categ" >{{suit.nomCateg}} </option>
+  </select>  -->
+
+<div class="card panel-faq">
+    <div class="card-header">
+        <button data-toggle="collapse" data-target="#accordion-one" aria-expanded="true"
+            aria-controls="accordion-one">Categories</button>
+    </div>
+    <div id="accordion-one" class="collapse show" data-parent="#tr-accordion">
+
+        <div class="panel-body">
+            <h5><i class="fa fa-caret-down"></i> Tous Les 
+                Catégories</h5>
+            <i class="icofont icofont-man-in-glasses"></i>Choisir la Catégorie
+            <ul>
+                <li type="button" class="cat" *ngFor="let suit of categ">{{suit.nomCateg}}</li>
+
+            </ul>
+            <!-- <div class="see-more">
+                <button type="button" class="show-more one"><i
+                        class="fa fa-plus-square-o" aria-hidden="true"></i>See
+                    More</button>
+                <ul class="more-category one">
+                    <li><a href="#">Fron end developer<span>(289)</span></a></li>
+                    <li><a href="#">Back end developer<span>(5402)</span></a></li>
+                    <li><a href="#">IT Department Manager<span>(3829)</span></a></li>
+                    <li><a href="#">QA Department Manager<span>(352)</span></a></li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</div>

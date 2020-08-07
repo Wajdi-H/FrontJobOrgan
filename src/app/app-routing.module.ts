@@ -11,6 +11,7 @@ import { PostjobComponent } from './postjob/postjob.component';
 import { AddprofilComponent } from './addprofil/addprofil.component';
 import { DetaisjobComponent } from './detaisjob/detaisjob.component';
 import { CandidatureComponent } from './candidature/candidature.component';
+import { ListcategorieComponent } from './categorie/listcategorie/listcategorie.component';
 const routes: Routes = [
  
   { path: 'Home', component: HomeComponent },
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path: 'add-profil', component: AddprofilComponent },
   { path: 'job-detais', component: DetaisjobComponent },
   { path: 'Candidature/:id', component: CandidatureComponent },
+  { path: 'listercategorie', component: ListcategorieComponent },
+
 
   {path: '', redirectTo: 'Home', pathMatch: 'full'},
 ];

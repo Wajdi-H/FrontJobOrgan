@@ -3,7 +3,7 @@ import { Entreprise } from '../entreprise/entreprise';
 
 export class Mission {
 
-    idMission: number=null;
+    idMission: number;
     titreMission: String=null;
     competances: String=null;
     description: String=null;
@@ -11,10 +11,16 @@ export class Mission {
     accessoires: String=null;
     categorie: Categorie=null;
     entreprise: Entreprise=null;
+    localisation:string;
+    budget:number;
+
+
 
     constructor(idMission: number, titreMission: String, competances: String,
         description: String, vehicule: String, accessoires: String,
-        categorie: Categorie, entreprise: Entreprise) {
+        categorie: Categorie, entreprise: Entreprise,localisation:string,
+        budget:number
+    ) {
         this.idMission = idMission;
         this.titreMission = titreMission;
         this.competances = competances;
@@ -23,6 +29,8 @@ export class Mission {
         this.categorie = categorie;
         this.entreprise = entreprise;
         this.description = description;
+        this.localisation = localisation;
+        this.budget = budget;
 
 
 

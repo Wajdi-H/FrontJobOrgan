@@ -16,6 +16,7 @@ import { DetaisjobComponent } from './detaisjob/detaisjob.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CandidatureComponent } from './candidature/candidature.component';
+import { ListcategorieComponent } from './categorie/listcategorie/listcategorie.component';
 
 
 
@@ -33,6 +34,7 @@ import { CandidatureComponent } from './candidature/candidature.component';
     AddprofilComponent,
     DetaisjobComponent,
     CandidatureComponent,
+    ListcategorieComponent,
   ],
   imports: [
     BrowserModule,
